@@ -294,6 +294,12 @@ class ProcessingConfigurationForm(forms.Form):
         'label': 'Store DIP location',
         'purpose': 'DS',
     }
+    processing_fields['95172864-469a-4420-a4e7-e0df70349abc'] = {
+        'type': 'storage_service',
+        'name': 'store_dip_location',
+        'label': 'Store DIP location',
+        'purpose': 'DS',
+    }
 
     EMPTY_OPTION_NAME = _('None')
     EMPTY_CHOICES = [
@@ -380,7 +386,7 @@ class ProcessingConfigurationForm(forms.Form):
             if field is None:
                 continue
             if isinstance(field, forms.ChoiceField):
-                if not value: # Ignore empty string!
+                if not value:  # Ignore empty string!
                     continue
             if fprops['type'] == 'days':
                 if value == 0:
